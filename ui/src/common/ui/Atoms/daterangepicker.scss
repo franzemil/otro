@@ -1,0 +1,37 @@
+// $color: hsl(171deg, 100%, 41%);
+$color: hsl(171deg, 100%, 41%);
+
+.crp-day--active {
+    &>span.rdrStartEdge {
+        color: $color  !important;
+    }
+
+    &>span.rdrInRange {
+        color: $color  !important;
+    }
+
+    &>span.rdrEndEdge {
+        color: $color  !important;
+    }
+
+    &.rdrDayToday {
+        color: $color  !important;
+
+        span::after {
+            background-color: $color  !important;
+        }
+
+        &>span.rdrInRange,span.rdrEndEdge,span.rdrStartEdge {
+            & ~ span.rdrDayNumber > span::after {
+                background-color: white  !important;
+            }
+        }
+
+    }
+}
+
+.crp {
+    & button.rdrStaticRangeSelected {
+        color: $color  !important;
+    }
+}

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Emtagas.Facturacion.Core</AssemblyName>
+    <RootNamespace>Emtagas.Facturacion.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Emtagas.Facturacion.Common\Emtagas.Facturacion.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Validator\facturaComputarizadaCompraVenta.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Utils\facturaComputarizadaCompraVenta.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
