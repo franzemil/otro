@@ -1,6 +1,6 @@
 import DataTable from 'react-data-table-component';
-
 import React, { useState } from 'react';
+
 const columns = [
     {
         name: 'Title',

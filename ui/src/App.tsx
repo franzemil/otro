@@ -1,49 +1,27 @@
-import { Fragment, useState } from 'react';
-import { Button, DateRangePicker } from './common/ui/Atoms';
+import { useState } from 'react';
 import { DateRange } from './common/ui/Atoms/DateRangePicker';
+import { NavBar } from './common/ui/Molecules/navbar';
+import { PageTemplate } from './common/ui/Templates';
+import { Facturacion } from './domain/facturacion/context/facturacion.context';
+import { FacturaPage } from './domain/facturacion/pages/facturas.page';
 import "./styles/index.scss"
 
 function App() {
   const [range, setRange] = useState<DateRange>({ startDate: new Date(), endDate: new Date() });
 
   return (
-    <section className="hero is-primary is-fullheight">
+    <section className="hero has-background-white-ter">
       <div className="hero-head">
-        <nav className="navbar">
-          <div className="container">
-            <div className="navbar-brand">
-              <a className="navbar-item">
-                <img src="https://bulma.bootcss.com/images/bulma-type-white.png" alt="Logo" />
-              </a>
-              <span className="navbar-burger burger" data-target="navbarMenuHeroB">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navbarMenuHeroB" className="navbar-menu">
-              <div className="navbar-end">
-                <a className="navbar-item is-active">
-                  Home
-                </a>
-                <a className="navbar-item">
-                  Examples
-                </a>
-                <a className="navbar-item">
-                  Documentation
-                </a>
-                <span className="navbar-item">
-                  <a className="button is-info is-inverted">
-                    <span className="icon">
-                      <i className="fab fa-github"></i>
-                    </span>
-                    <span>Download</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <NavBar />
+      </div>
+      <div className="hero-body is-align-content-flex-start">
+        <div className="container">
+          <Facturacion>
+            <PageTemplate>
+              <FacturaPage />
+            </PageTemplate>
+          </Facturacion>
+        </div>
       </div>
     </section>
   );
