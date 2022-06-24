@@ -5,8 +5,10 @@ export const enum FacturaStatus {
 
 
 export interface Factura {
-    id: string;
-    facturaRef: string;
-    cuf: string;
-    status: FacturaStatus
+    id: number;
+    numeroFactura: number;
+    nit: string;
+    razonSocial: string;
+    fechaPago: Date;
+    estado: FacturaStatus
 }

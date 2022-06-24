@@ -1,7 +1,7 @@
 export interface ButtonProps {
     text: string;
     onClick: () => void;
-    primary: boolean;
+    primary?: boolean;
 }
 
 export const Button = ({text, onClick, primary}: ButtonProps) => 
