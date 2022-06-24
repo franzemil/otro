@@ -1,8 +1,7 @@
 export const enum FacturaStatus {
     DECLARADA,
-    PENDIENTE
+    PENDIENTE,
 }
-
 
 export interface Factura {
     id: number;
@@ -10,5 +9,5 @@ export interface Factura {
     nit: string;
     razonSocial: string;
     fechaPago: Date;
-    estado: FacturaStatus
+    estado: FacturaStatus;
 }
