@@ -1,14 +1,14 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://pilotosiatservicios.impuestos.gob.bo/v2/ServicioFacturacionComputarizada?wsdl"
+      "https://pilotosiatservicios.impuestos.gob.bo/v2/FacturacionCodigos?wsdl"
     ],
     "collectionTypes": [
       "System.Array",
       "System.Collections.Generic.Dictionary`2"
     ],
     "namespaceMappings": [
-      "*, ImpuestosNacionales"
+      "*, SIN.Codigos"
     ],
     "targetFramework": "net5.0",
     "typeReuseMode": "All"
