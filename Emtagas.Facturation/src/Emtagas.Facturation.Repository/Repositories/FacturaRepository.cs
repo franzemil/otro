@@ -57,7 +57,7 @@ namespace Emtagas.Facturation.Repository.Repositories
                 .ToList().Select(f => f.ToModel());
         }
 
-        public Factura GetFactura(Guid Id)
+        public Factura GetFactura(int id)
         {
             throw new NotImplementedException();
         }

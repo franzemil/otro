@@ -9,6 +9,8 @@ namespace Emtagas.Facturacion.DbMigrator.Scripts
             Create.Table("FaDeclaracionFactura")
                 .WithColumn("Id").AsGuid().PrimaryKey().WithDefault(SystemMethods.NewGuid)
                 .WithColumn("FacturaId").AsInt32()
+                .WithColumn("CUF").AsString(150)
+                .WithColumn("Detalle").AsString()
                 .WithColumn("FechaDeclaracion").AsInt32();
         }
 

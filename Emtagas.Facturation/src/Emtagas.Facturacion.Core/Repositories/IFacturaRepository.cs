@@ -12,6 +12,6 @@ namespace Emtagas.Facturacion.Core.Repositories
         
         IEnumerable<Factura> GetFacturaFilteredAndPaged(FacturaFilters filters, Pagination pagination);
 
-        Factura GetFactura(Guid Id);
+        Factura GetFactura(int Id);
     }
 }

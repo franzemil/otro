@@ -1,4 +1,6 @@
-﻿using Emtagas.Facturation.Repository.Models;
+﻿using Emtagas.Facturacion.Core.Entities;
+using Emtagas.Facturation.Repository.Models;
+using Emtagas.Facturation.Repository.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Emtagas.Facturation.Repository
@@ -7,7 +9,13 @@ namespace Emtagas.Facturation.Repository
     {
         public DbSet<FacturaModel> Factura { get; set; }
 
+        public DbSet<CodigoFacturacionModel> CUF { get; set; }
+        
         public EmtagasDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }
     }
