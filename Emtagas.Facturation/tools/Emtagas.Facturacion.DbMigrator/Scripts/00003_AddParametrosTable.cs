@@ -2,21 +2,20 @@ using FluentMigrator;
 
 namespace Emtagas.Facturacion.DbMigrator.Scripts
 {
-    [Migration((00002))]
-    public class AddCodigoFacturacionTable : Migration
-    {
+    [Migration(00003)]
+    public class AddParametrosTable : Migration {
         public override void Up()
         {
-            Create.Table("FaCodigoFacturacion")
+            Create.Table("FaParametroFacturacion")
                 .WithColumn("Id").AsGuid().PrimaryKey().WithDefault(SystemMethods.NewGuid)
                 .WithColumn("Codigo").AsInt32()
-                .WithColumn("TipoCodigo").AsString()
-                .WithColumn("Fecha").AsDate();
+                .WithColumn("Description").AsInt32()
+                .WithColumn("TipoParametro").AsString().Unique();
         }
 
         public override void Down()
         {
-            Delete.Table("FaCodigoFacturacion");
+            Delete.Table("FaParametroFacturacion");
         }
     }
 }

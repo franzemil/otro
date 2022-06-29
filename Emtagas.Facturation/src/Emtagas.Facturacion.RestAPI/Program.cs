@@ -18,6 +18,10 @@ namespace Emtagas.Facturacion.RestAPI
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(((context, builder) =>
+                {
+                    builder.AddEnvironmentVariables();
+                }))
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

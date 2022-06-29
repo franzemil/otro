@@ -11,6 +11,8 @@ namespace Emtagas.Facturation.Repository
 
         public DbSet<CodigoFacturacionModel> CUF { get; set; }
         
+        public DbSet<ParametroModel> Parametros { get; set; }
+
         public EmtagasDbContext(DbContextOptions options) : base(options)
         {
         }

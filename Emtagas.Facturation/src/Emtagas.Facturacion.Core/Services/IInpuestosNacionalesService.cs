@@ -1,13 +1,15 @@
-﻿namespace Emtagas.Facturacion.Core.Services
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Emtagas.Facturacion.Core.ValueObjects;
+
+namespace Emtagas.Facturacion.Core.Services
 {
     public interface IInpuestosNacionalesService
     {
-        string SolicitarCUFD();
+        Task<string> SolicitarCodigoInicioSistema();
         
-        void SolicitudCUFDMasivo();
+        Task<string> SolicitarCodigoUnicoFacturacionDiaria();
 
-        void SolicitudCUIS();
-        
-        void SolicitudCUISMasivo();
+        Task<IEnumerable<Parametro>> SincronizarParametros(string codigoUnicoInicioSistema);
     }
 }

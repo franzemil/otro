@@ -10,6 +10,10 @@ namespace Emtagas.Facturacion.Core.Config
 
         public string CodigoSucursal { get; set; } = DEFAULT_CODIGO_SUCURSAL;
 
+        public int Nit { get; set; }
+
         public string ApiToken { get; set; }
+
+        public bool IsDevelopment { get; set; }
     }
 }

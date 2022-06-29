@@ -1,15 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Emtagas.Facturacion.Core.Config;
 using Emtagas.Facturacion.Core.Repositories;
 using Emtagas.Facturation.Repository;
 using Emtagas.Facturation.Repository.Repositories;
@@ -24,12 +19,13 @@ namespace Emtagas.Facturacion.RestAPI
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddDbContext<EmtagasDbContext>(options => options.UseSqlServer("Server=localhost;Database=bdtarija;User Id=sa;Password=@sistemas123;"));
+            var configuration = Configuration.GetEmtagasConfiguration();
+            var dbUri = Configuration.GetValue<string>("DB_URI");
+            services.AddDbContext<EmtagasDbContext>(options => options.UseSqlServer(dbUri));
             services.AddScoped<IFacturaRepository>(sp =>
             {
                 var dbContext = sp.GetService<EmtagasDbContext>();

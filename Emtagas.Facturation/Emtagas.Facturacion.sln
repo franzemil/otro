@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emtagas.Facturacion.DbMigra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emtagas.Facturacion.INServices", "src\Emtagas.Facturacion.INServices\Emtagas.Facturacion.INServices.csproj", "{966DBEA0-FAB8-4CD7-BED2-DE4D4547BEFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emtagas.Facturacion.Scheduler", "src\Emtagas.Facturacion.Scheduler\Emtagas.Facturacion.Scheduler.csproj", "{CC1D2F12-66EC-4FA2-9470-1DC0E2E95E0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{966DBEA0-FAB8-4CD7-BED2-DE4D4547BEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{966DBEA0-FAB8-4CD7-BED2-DE4D4547BEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{966DBEA0-FAB8-4CD7-BED2-DE4D4547BEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1D2F12-66EC-4FA2-9470-1DC0E2E95E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1D2F12-66EC-4FA2-9470-1DC0E2E95E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1D2F12-66EC-4FA2-9470-1DC0E2E95E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1D2F12-66EC-4FA2-9470-1DC0E2E95E0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C9725CF9-8B14-419C-A565-7CA681BBFB00} = {345A1262-A813-4596-993D-D3111D26336D}
@@ -69,5 +75,6 @@ Global
 		{447C19AB-F7B6-4FB5-AE3B-BA7E3738537D} = {345A1262-A813-4596-993D-D3111D26336D}
 		{A16ED448-7173-4ECE-9224-5B74DC6B7DDD} = {82A5EB17-7065-4FD1-BD68-16667AB331A1}
 		{966DBEA0-FAB8-4CD7-BED2-DE4D4547BEFE} = {345A1262-A813-4596-993D-D3111D26336D}
+		{CC1D2F12-66EC-4FA2-9470-1DC0E2E95E0B} = {345A1262-A813-4596-993D-D3111D26336D}
 	EndGlobalSection
 EndGlobal

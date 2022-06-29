@@ -21,11 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\Emtagas.Facturacion.Core\Emtagas.Facturacion.Core.csproj" />
+    <ProjectReference Include="..\..\src\Emtagas.Facturacion.INServices\Emtagas.Facturacion.INServices.csproj" />
   </ItemGroup>
 
   <ItemGroup>
