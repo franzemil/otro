@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using Emtagas.Facturacion.Core;
@@ -9,14 +10,14 @@ namespace Emtagas.Facturacion.Scheduler.Jobs
     {
         private readonly FacturacionFacade _application;
 
-        public InicioSistemaJob(FacturacionFacade application)
+        public InicioSistemaJob()
         {
-            _application = application;
         }
         
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Gaaaa");
+            await Task.CompletedTask;
         }
     }
 }
