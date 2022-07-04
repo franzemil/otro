@@ -12,6 +12,8 @@ namespace Emtagas.Facturacion.Core.Config
 
         public int Nit { get; set; }
 
+        public string RazonSocial { get; set; } = "Emtagas";
+
         public string ApiToken { get; set; }
 
         public bool IsDevelopment { get; set; }

@@ -13,7 +13,7 @@ namespace SIN.FacturacionServiciosBasicos
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="https://siat.impuestos.gob.bo/", ConfigurationName="SIN.FacturacionServiciosBasicos.ServicioFacturacion")]
-    internal interface ServicioFacturacion
+    public interface ServicioFacturacion
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -869,7 +869,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionPaqueteFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class recepcionPaqueteFactura
+    public partial class recepcionPaqueteFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -890,7 +890,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionPaqueteFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class recepcionPaqueteFacturaResponse
+    public partial class recepcionPaqueteFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -911,7 +911,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="verificarComunicacion", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class verificarComunicacion
+    public partial class verificarComunicacion
     {
         
         public verificarComunicacion()
@@ -923,7 +923,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="verificarComunicacionResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class verificarComunicacionResponse
+    public partial class verificarComunicacionResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -944,7 +944,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class recepcionFactura
+    public partial class recepcionFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -965,7 +965,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class recepcionFacturaResponse
+    public partial class recepcionFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -986,7 +986,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="validacionRecepcionMasivaFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class validacionRecepcionMasivaFactura
+    public partial class validacionRecepcionMasivaFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1007,7 +1007,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="validacionRecepcionMasivaFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class validacionRecepcionMasivaFacturaResponse
+    public partial class validacionRecepcionMasivaFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1028,7 +1028,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionMasivaFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class recepcionMasivaFactura
+    public partial class recepcionMasivaFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1049,7 +1049,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="recepcionMasivaFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class recepcionMasivaFacturaResponse
+    public partial class recepcionMasivaFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1070,7 +1070,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="verificacionEstadoFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class verificacionEstadoFactura
+    public partial class verificacionEstadoFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1091,7 +1091,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="verificacionEstadoFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class verificacionEstadoFacturaResponse
+    public partial class verificacionEstadoFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1112,7 +1112,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="validacionRecepcionPaqueteFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class validacionRecepcionPaqueteFactura
+    public partial class validacionRecepcionPaqueteFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1133,7 +1133,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="validacionRecepcionPaqueteFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class validacionRecepcionPaqueteFacturaResponse
+    public partial class validacionRecepcionPaqueteFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1154,7 +1154,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="anulacionFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class anulacionFactura
+    public partial class anulacionFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1175,7 +1175,7 @@ namespace SIN.FacturacionServiciosBasicos
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="anulacionFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class anulacionFacturaResponse
+    public partial class anulacionFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1199,7 +1199,7 @@ namespace SIN.FacturacionServiciosBasicos
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    internal partial class ServicioFacturacionClient : System.ServiceModel.ClientBase<SIN.FacturacionServiciosBasicos.ServicioFacturacion>, SIN.FacturacionServiciosBasicos.ServicioFacturacion
+    public partial class ServicioFacturacionClient : System.ServiceModel.ClientBase<SIN.FacturacionServiciosBasicos.ServicioFacturacion>, SIN.FacturacionServiciosBasicos.ServicioFacturacion
     {
         
         /// <summary>

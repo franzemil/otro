@@ -5,7 +5,7 @@ using Emtagas.Facturacion.Core.ValueObjects;
 
 namespace Emtagas.Facturation.Repository.Models
 {
-    [Table("FaFacturaParametro")]
+    [Table("FaParametroFacturacion")]
     public class ParametroModel
     {
         public ParametroModel()
@@ -34,6 +34,8 @@ namespace Emtagas.Facturation.Repository.Models
             [Facturacion.Core.ValueObjects.TipoParametro.UnidadMedida] = "UNIDAD_MEDIDA",
             [Facturacion.Core.ValueObjects.TipoParametro.CodigoDocumentoSector] = "CODIGO_DOCUMENTO_SECTOR",
             [Facturacion.Core.ValueObjects.TipoParametro.TipoDocumentoIdentidad] = "TIPO_DOCUMENTO_IDENTIDAD",
+            [Facturacion.Core.ValueObjects.TipoParametro.TipoMoneda] = "TIPO_MONEDA",
+            [Facturacion.Core.ValueObjects.TipoParametro.CodigoProducto] = "CODIGO_PRODUCTO",
         };
         
         private static readonly IDictionary<string, TipoParametro> reverse = new Dictionary<string, TipoParametro>()
@@ -42,6 +44,8 @@ namespace Emtagas.Facturation.Repository.Models
             ["UNIDAD_MEDIDA"] = Facturacion.Core.ValueObjects.TipoParametro.UnidadMedida,
             ["CODIGO_DOCUMENTO_SECTOR"] = Facturacion.Core.ValueObjects.TipoParametro.CodigoDocumentoSector,
             ["TIPO_DOCUMENTO_IDENTIDAD"] = Facturacion.Core.ValueObjects.TipoParametro.TipoDocumentoIdentidad,
+            ["TIPO_MONEDA"] = Facturacion.Core.ValueObjects.TipoParametro.TipoMoneda,
+            ["CODIGO_PRODUCTO"] = Facturacion.Core.ValueObjects.TipoParametro.CodigoProducto
         };
 
         public Parametro ToModel()

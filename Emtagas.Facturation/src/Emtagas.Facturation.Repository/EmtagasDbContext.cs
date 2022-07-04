@@ -9,7 +9,7 @@ namespace Emtagas.Facturation.Repository
     {
         public DbSet<FacturaModel> Factura { get; set; }
 
-        public DbSet<CodigoFacturacionModel> CUF { get; set; }
+        public DbSet<CodigoFacturacionModel> CodigosFacturacion { get; set; }
         
         public DbSet<ParametroModel> Parametros { get; set; }
 

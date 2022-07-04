@@ -15,7 +15,8 @@ namespace Emtagas.Facturation.SQLServerRepository.Repositories
         private readonly IDictionary<TipoCodigo, string> _tipoCodigoMap = new Dictionary<TipoCodigo, string>
             {
                 [TipoCodigo.CUFD] = "CUFD",
-                [TipoCodigo.CUIS] = "CUIS"
+                [TipoCodigo.CUIS] = "CUIS",
+                [TipoCodigo.CUFD_CONTROL] = "CUFD_CONTROL",
             };
 
         public CodigoFacturacionRepository(EmtagasDbContext context)
@@ -25,7 +26,7 @@ namespace Emtagas.Facturation.SQLServerRepository.Repositories
         
         public string GetCodeByDate(DateTime date, TipoCodigo tipoCodigo)
         {
-            var cuf = _context.CUF.FirstOrDefault(cuf => 
+            var cuf = _context.CodigosFacturacion.FirstOrDefault(cuf => 
                 cuf.Fecha == date && cuf.TipoCodigo.Equals(_tipoCodigoMap[tipoCodigo])
                 );
 

@@ -13,7 +13,7 @@ namespace SIN.Sincronizacion
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="https://siat.impuestos.gob.bo/", ConfigurationName="SIN.Sincronizacion.ServicioFacturacionSincronizacion")]
-    internal interface ServicioFacturacionSincronizacion
+    public interface ServicioFacturacionSincronizacion
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -903,7 +903,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaMotivoAnulacion", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaMotivoAnulacion
+    public partial class sincronizarParametricaMotivoAnulacion
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -924,7 +924,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaMotivoAnulacionResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaMotivoAnulacionResponse
+    public partial class sincronizarParametricaMotivoAnulacionResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -945,7 +945,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarActividades", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarActividades
+    public partial class sincronizarActividades
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -966,7 +966,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarActividadesResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarActividadesResponse
+    public partial class sincronizarActividadesResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -987,7 +987,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarFechaHora", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarFechaHora
+    public partial class sincronizarFechaHora
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1008,7 +1008,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarFechaHoraResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarFechaHoraResponse
+    public partial class sincronizarFechaHoraResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1029,7 +1029,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaLeyendasFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaLeyendasFactura
+    public partial class sincronizarListaLeyendasFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1050,7 +1050,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaLeyendasFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaLeyendasFacturaResponse
+    public partial class sincronizarListaLeyendasFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1071,7 +1071,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoHabitacion", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoHabitacion
+    public partial class sincronizarParametricaTipoHabitacion
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1092,7 +1092,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoHabitacionResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoHabitacionResponse
+    public partial class sincronizarParametricaTipoHabitacionResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1113,7 +1113,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaActividadesDocumentoSector", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaActividadesDocumentoSector
+    public partial class sincronizarListaActividadesDocumentoSector
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1134,7 +1134,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaActividadesDocumentoSectorResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaActividadesDocumentoSectorResponse
+    public partial class sincronizarListaActividadesDocumentoSectorResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1155,7 +1155,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoDocumentoIdentidad", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoDocumentoIdentidad
+    public partial class sincronizarParametricaTipoDocumentoIdentidad
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1176,7 +1176,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoDocumentoIdentidadResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoDocumentoIdentidadResponse
+    public partial class sincronizarParametricaTipoDocumentoIdentidadResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1197,7 +1197,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaUnidadMedida", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaUnidadMedida
+    public partial class sincronizarParametricaUnidadMedida
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1218,7 +1218,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaUnidadMedidaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaUnidadMedidaResponse
+    public partial class sincronizarParametricaUnidadMedidaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1239,7 +1239,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoDocumentoSector", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoDocumentoSector
+    public partial class sincronizarParametricaTipoDocumentoSector
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1260,7 +1260,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoDocumentoSectorResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoDocumentoSectorResponse
+    public partial class sincronizarParametricaTipoDocumentoSectorResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1281,7 +1281,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTiposFactura", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTiposFactura
+    public partial class sincronizarParametricaTiposFactura
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1302,7 +1302,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTiposFacturaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTiposFacturaResponse
+    public partial class sincronizarParametricaTiposFacturaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1323,7 +1323,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="verificarComunicacion", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class verificarComunicacion
+    public partial class verificarComunicacion
     {
         
         public verificarComunicacion()
@@ -1335,7 +1335,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="verificarComunicacionResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class verificarComunicacionResponse
+    public partial class verificarComunicacionResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1356,7 +1356,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaMensajesServicios", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaMensajesServicios
+    public partial class sincronizarListaMensajesServicios
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1377,7 +1377,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaMensajesServiciosResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaMensajesServiciosResponse
+    public partial class sincronizarListaMensajesServiciosResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1398,7 +1398,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoMetodoPago", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoMetodoPago
+    public partial class sincronizarParametricaTipoMetodoPago
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1419,7 +1419,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoMetodoPagoResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoMetodoPagoResponse
+    public partial class sincronizarParametricaTipoMetodoPagoResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1440,7 +1440,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaEventosSignificativos", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaEventosSignificativos
+    public partial class sincronizarParametricaEventosSignificativos
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1461,7 +1461,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaEventosSignificativosResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaEventosSignificativosResponse
+    public partial class sincronizarParametricaEventosSignificativosResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1482,7 +1482,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoPuntoVenta", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoPuntoVenta
+    public partial class sincronizarParametricaTipoPuntoVenta
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1503,7 +1503,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoPuntoVentaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoPuntoVentaResponse
+    public partial class sincronizarParametricaTipoPuntoVentaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1524,7 +1524,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaProductosServicios", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaProductosServicios
+    public partial class sincronizarListaProductosServicios
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1545,7 +1545,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarListaProductosServiciosResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarListaProductosServiciosResponse
+    public partial class sincronizarListaProductosServiciosResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1566,7 +1566,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoEmision", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoEmision
+    public partial class sincronizarParametricaTipoEmision
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1587,7 +1587,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoEmisionResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoEmisionResponse
+    public partial class sincronizarParametricaTipoEmisionResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1608,7 +1608,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaPaisOrigen", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaPaisOrigen
+    public partial class sincronizarParametricaPaisOrigen
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1629,7 +1629,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaPaisOrigenResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaPaisOrigenResponse
+    public partial class sincronizarParametricaPaisOrigenResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1650,7 +1650,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoMoneda", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoMoneda
+    public partial class sincronizarParametricaTipoMoneda
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1671,7 +1671,7 @@ namespace SIN.Sincronizacion
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sincronizarParametricaTipoMonedaResponse", WrapperNamespace="https://siat.impuestos.gob.bo/", IsWrapped=true)]
-    internal partial class sincronizarParametricaTipoMonedaResponse
+    public partial class sincronizarParametricaTipoMonedaResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://siat.impuestos.gob.bo/", Order=0)]
@@ -1695,7 +1695,7 @@ namespace SIN.Sincronizacion
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    internal partial class ServicioFacturacionSincronizacionClient : System.ServiceModel.ClientBase<SIN.Sincronizacion.ServicioFacturacionSincronizacion>, SIN.Sincronizacion.ServicioFacturacionSincronizacion
+    public partial class ServicioFacturacionSincronizacionClient : System.ServiceModel.ClientBase<SIN.Sincronizacion.ServicioFacturacionSincronizacion>, SIN.Sincronizacion.ServicioFacturacionSincronizacion
     {
         
         /// <summary>

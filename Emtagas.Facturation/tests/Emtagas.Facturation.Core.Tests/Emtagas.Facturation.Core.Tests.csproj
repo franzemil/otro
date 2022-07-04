@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
@@ -23,11 +24,16 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Emtagas.Facturacion.Core\Emtagas.Facturacion.Core.csproj" />
     <ProjectReference Include="..\..\src\Emtagas.Facturacion.INServices\Emtagas.Facturacion.INServices.csproj" />
+    <ProjectReference Include="..\..\src\Emtagas.Facturation.Repository\Emtagas.Facturacion.SQLServerRepository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Data\facturaComputarizadaCompraVenta.xml" />
     <EmbeddedResource Include="Data\facturaComputarizadaCompraVenta.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="Data\InvalidXmlDocument.xml" />
+    <EmbeddedResource Include="Data\InvalidXmlDocument.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

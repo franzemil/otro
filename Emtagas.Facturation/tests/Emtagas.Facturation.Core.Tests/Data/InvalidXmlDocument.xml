@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<facturaComputarizadaServicioBasico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="facturaComputarizadaServicioBasico.xsd">
+    <detalle>
+        <codigoProducto>123456</codigoProducto>
+        <descripcion>Servicio Mes Febrero</descripcion>
+        <cantidad>INVALID CANTIDAD</cantidad>
+        <unidadMedida>58</unidadMedida>
+        <precioUnitario>76</precioUnitario>
+        <montoDescuento xsi:nil="true"/>
+        <subTotal>76</subTotal>
+    </detalle>
+</facturaComputarizadaServicioBasico>

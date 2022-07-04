@@ -7,6 +7,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Emtagas.Facturacion.Core.Config;
 using SIN.Codigos;
+using SIN.FacturacionServiciosBasicos;
+using SIN.RecepcionCompras;
+using SIN.Sincronizacion;
+using ServicioFacturacionClient = SIN.FacturacionServiciosBasicos.ServicioFacturacionClient;
 
 namespace Emtagas.Facturacion.INServices.Client
 {
@@ -66,5 +70,25 @@ namespace Emtagas.Facturacion.INServices.Client
 
             return codigoServiceClient;
         }
+
+        public static ServicioFacturacionSincronizacionClient CreateSincronizacionClient(Configuration configuration)
+        {
+            var serviceClient = new ServicioFacturacionSincronizacionClient();
+            
+            serviceClient.Endpoint.EndpointBehaviors.Add(new CorrelationEndpointBehavior(configuration.ApiToken));
+
+            return serviceClient;
+        }
+
+
+        public static ServicioFacturacionClient CreateServicioFacturacionClient(Configuration configuration)
+        {
+            var serviceClient = new ServicioFacturacionClient();
+            
+            serviceClient.Endpoint.EndpointBehaviors.Add(new CorrelationEndpointBehavior(configuration.ApiToken));
+
+            return serviceClient;
+        }
+     
     }
 }

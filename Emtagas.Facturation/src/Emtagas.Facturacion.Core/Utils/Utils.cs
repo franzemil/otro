@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Emtagas.Facturacion.Core.Utils
 {
-    public class Utils
+    public static class Utils
     {
-        public byte[] Comprimir(byte[] file)
+        public static byte[] Comprimir(byte[] file)
         {
             using var stream = new MemoryStream(file);
             using (var compressor = new GZipStream(stream, CompressionMode.Compress))
@@ -18,7 +18,7 @@ namespace Emtagas.Facturacion.Core.Utils
             return stream.ToArray();
         }
 
-        public string ComputeHash256(byte[] content)
+        public static string ComputeHash256(byte[] content)
         {
             using var sha256 = SHA256.Create();
             var hash = sha256.ComputeHash(content);

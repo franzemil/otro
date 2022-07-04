@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Emtagas.Facturacion.Core.Entities;
 using Emtagas.Facturacion.Core.Repositories;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Emtagas.Facturation.Repository.Repositories
@@ -32,9 +33,13 @@ namespace Emtagas.Facturation.Repository.Repositories
                 ff.FechaPago as FechaPago,
                 ff.TotalFactura,
                 ff.Mes,
-                fdf.FechaDeclaracion
-                FROM FaFactura ff
-            LEFT JOIN FaDeclaracionFactura fdf ON ff.IdFactura = fdf.FacturaId");
+                fdf.FechaDeclaracion,
+                c.IdCliente as IdCliente,
+	            tm.CodMedidor as CodigoMedidor
+            FROM FaFactura ff
+            LEFT JOIN FaDeclaracionFactura fdf ON ff.IdFactura = fdf.FacturaId
+            INNER JOIN AcContrato c ON ff.IdContrato = c.IdContrato 
+            INNER JOIN TeMedidor tm ON tm.IdContrato = c.IdContrato ");
 
             if (filters.NumeroFactura != null)
             {
@@ -59,7 +64,25 @@ namespace Emtagas.Facturation.Repository.Repositories
 
         public Factura GetFactura(int id)
         {
-            throw new NotImplementedException();
+            var query = _context.Factura.FromSqlRaw(@$"
+            SELECT 
+                ff.IdFactura AS Id, 
+                ff.NroFactura as NumeroFactura,
+                ff.NIT,
+                ff.nombre as RazonSocial,
+                ff.FechaPago as FechaPago,
+                ff.TotalFactura,
+                ff.Mes,
+                fdf.FechaDeclaracion,
+                c.IdCliente as IdCliente,
+	            tm.CodMedidor as CodigoMedidor
+            FROM FaFactura ff
+            LEFT JOIN FaDeclaracionFactura fdf ON ff.IdFactura = fdf.FacturaId
+            INNER JOIN AcContrato c ON ff.IdContrato = c.IdContrato 
+            INNER JOIN TeMedidor tm ON tm.IdContrato = c.IdContrato");
+
+            return query.First(f => f.Id == id).ToModel();
+
         }
     }
 }

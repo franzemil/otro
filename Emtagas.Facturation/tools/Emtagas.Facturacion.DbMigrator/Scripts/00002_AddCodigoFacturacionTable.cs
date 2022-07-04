@@ -9,7 +9,7 @@ namespace Emtagas.Facturacion.DbMigrator.Scripts
         {
             Create.Table("FaCodigoFacturacion")
                 .WithColumn("Id").AsGuid().PrimaryKey().WithDefault(SystemMethods.NewGuid)
-                .WithColumn("Codigo").AsInt32()
+                .WithColumn("Codigo").AsString(100)
                 .WithColumn("TipoCodigo").AsString()
                 .WithColumn("Fecha").AsDate();
         }

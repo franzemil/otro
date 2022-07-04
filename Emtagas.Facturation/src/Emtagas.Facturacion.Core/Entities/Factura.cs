@@ -19,5 +19,11 @@ namespace Emtagas.Facturacion.Core.Entities
         public DateTime FechaPago { get; set; }
         
         public DateTime? FechaDeclaracion { get; set; }
+
+        public int IdCliente { get; set; }
+
+        public string CodigoMedidor { get; set; }
+
+        public DetalleFactura Detalle { get; set; }
     }
 }

@@ -19,22 +19,15 @@ namespace Emtagas.Facturation.SQLServerRepository.Repositories
         
         public IEnumerable<Parametro> SaveParametros(IEnumerable<Parametro> toSave)
         {
-            var savedParameters = toSave.Select(p => new ParametroModel(p)).Select(parametro =>
-            {
-                var currentParametro = _context.Parametros.First(p => p.TipoParametro == parametro.TipoParametro);
-
-                if (currentParametro == null)
-                {
-                   return _context.Add(parametro).Entity;
-                }
-                    
-                currentParametro.Codigo = parametro.Codigo;
-                return parametro;
-            });
+            _context.Parametros.RemoveRange(_context.Parametros);
+            
+            var toAdd = toSave.Select(p => new ParametroModel(p));
+                
+            _context.AddRange(toAdd);
 
             _context.SaveChanges();
 
-            return savedParameters.Select(p => p.ToModel());
+            return toSave;
         }
 
         public IEnumerable<Parametro> GetParametros()

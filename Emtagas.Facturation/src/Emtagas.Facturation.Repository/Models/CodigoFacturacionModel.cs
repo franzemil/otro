@@ -9,7 +9,6 @@ namespace Emtagas.Facturation.Repository.Models
     {
         public Guid Id { get; set; }
         
-        
         public string TipoCodigo { get; set; }
 
         public string Codigo { get; set; }

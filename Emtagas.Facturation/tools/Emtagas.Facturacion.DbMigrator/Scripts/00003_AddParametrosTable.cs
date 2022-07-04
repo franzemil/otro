@@ -9,8 +9,8 @@ namespace Emtagas.Facturacion.DbMigrator.Scripts
             Create.Table("FaParametroFacturacion")
                 .WithColumn("Id").AsGuid().PrimaryKey().WithDefault(SystemMethods.NewGuid)
                 .WithColumn("Codigo").AsInt32()
-                .WithColumn("Description").AsInt32()
-                .WithColumn("TipoParametro").AsString().Unique();
+                .WithColumn("Description").AsString()
+                .WithColumn("TipoParametro").AsString();
         }
 
         public override void Down()

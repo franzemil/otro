@@ -23,6 +23,10 @@ namespace Emtagas.Facturation.Repository.Models
         
         public DateTime? FechaDeclaracion { get; set; }
 
+        public int IdCliente { get; set; }
+
+        public string CodigoMedidor { get; set; }
+
         public Factura ToModel()
         {
             return new Factura()
@@ -34,7 +38,9 @@ namespace Emtagas.Facturation.Repository.Models
                 TotalFactura = TotalFactura,
                 Mes = Mes,
                 FechaPago = FechaPago,
-                FechaDeclaracion = FechaDeclaracion
+                FechaDeclaracion = FechaDeclaracion,
+                IdCliente = IdCliente,
+                CodigoMedidor = CodigoMedidor
             };
         }
     }
