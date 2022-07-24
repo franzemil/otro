@@ -32,7 +32,7 @@ namespace Emtagas.Facturation.Core.Tests.Utils
         {
             var factura = new FacturaRepository(_contextFixture.DbContext).GetFactura(3890640);
 
-            var serializer = new FacturaXMLSerializer(_configurationFixture.config, "6F9892E5");
+            var serializer = new FacturaXmlSerializer(_configurationFixture.config, "6F9892E5");
             var facturaXml = serializer.Serialize(factura, "TEst");
 
 

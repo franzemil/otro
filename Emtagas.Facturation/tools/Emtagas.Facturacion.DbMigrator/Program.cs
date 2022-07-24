@@ -31,9 +31,8 @@ namespace Emtagas.Facturacion.DbMigrator
                 .AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb
                     .AddSqlServer()
-                    .WithGlobalConnectionString(dbUri)
+                    //.WithGlobalConnectionString(dbUri)
                     .ScanIn(Assembly.GetExecutingAssembly()).For.Migrations())
-                
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 .BuildServiceProvider(false);
         }

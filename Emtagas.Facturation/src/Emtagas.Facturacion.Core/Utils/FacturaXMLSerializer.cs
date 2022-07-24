@@ -8,12 +8,12 @@ using Emtagas.Facturacion.Core.Entities;
 
 namespace Emtagas.Facturacion.Core.Utils
 {
-    public class FacturaXMLSerializer
+    public class FacturaXmlSerializer
     {
         private readonly Configuration _configuration;
         private readonly string _cufd;
 
-        public FacturaXMLSerializer(Configuration configuration, string cufd)
+        public FacturaXmlSerializer(Configuration configuration, string cufd)
         {
             _configuration = configuration;
             _cufd = cufd;
@@ -32,7 +32,7 @@ namespace Emtagas.Facturacion.Core.Utils
 
         private FacturaComputarizadaServicioBasico Format(Factura factura, string cuf)
         {
-            var cabezera = new Cabecera
+            var cabecera = new Cabecera
             {
                 NitEmisor = _configuration.Nit,
                 RazonSocialEmisor = _configuration.RazonSocial,
@@ -62,20 +62,20 @@ namespace Emtagas.Facturacion.Core.Utils
 
             var detalle = new Detalle()
             {
-                CodigoProductoSin = 99100,
+                CodigoProductoSin = 9900,
                 ActividadEconomica = 352020,
                 Cantidad = 1,
-                Descripcion = "Demo",
+                Descripcion = factura.Detalle.Description,
                 CodigoProducto = 2,
                 UnidadMedida = Constants.MetrosCubicos68FBol,
                 PrecioUnitario = 100,
                 MontoDescuento = 0,
-                SubTotal = 100
+                SubTotal = factura.Detalle.SubTotal
             };
             
             return new FacturaComputarizadaServicioBasico()
             {
-                Cabecera = cabezera,
+                Cabecera = cabecera,
                 Detalle = detalle
             };
         }

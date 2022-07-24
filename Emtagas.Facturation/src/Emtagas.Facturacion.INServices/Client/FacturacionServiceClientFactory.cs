@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
@@ -7,8 +8,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Emtagas.Facturacion.Core.Config;
 using SIN.Codigos;
-using SIN.FacturacionServiciosBasicos;
-using SIN.RecepcionCompras;
 using SIN.Sincronizacion;
 using ServicioFacturacionClient = SIN.FacturacionServiciosBasicos.ServicioFacturacionClient;
 
@@ -65,7 +64,8 @@ namespace Emtagas.Facturacion.INServices.Client
         public static ServicioFacturacionCodigosClient CreateCodigoClient(Configuration configuration)
         {
             var codigoServiceClient = new ServicioFacturacionCodigosClient();
-            
+
+            codigoServiceClient.Endpoint.Address = new EndpointAddress($"{configuration.InpuestosServiceApi}/FacturacionCodigos");
             codigoServiceClient.Endpoint.EndpointBehaviors.Add(new CorrelationEndpointBehavior(configuration.ApiToken));
 
             return codigoServiceClient;
@@ -75,6 +75,7 @@ namespace Emtagas.Facturacion.INServices.Client
         {
             var serviceClient = new ServicioFacturacionSincronizacionClient();
             
+            serviceClient.Endpoint.Address = new EndpointAddress($"{configuration.InpuestosServiceApi}/FacturacionSincronizacion");
             serviceClient.Endpoint.EndpointBehaviors.Add(new CorrelationEndpointBehavior(configuration.ApiToken));
 
             return serviceClient;
@@ -85,6 +86,7 @@ namespace Emtagas.Facturacion.INServices.Client
         {
             var serviceClient = new ServicioFacturacionClient();
             
+            serviceClient.Endpoint.Address = new EndpointAddress($"{configuration.InpuestosServiceApi}/ServicioFacturacionServicioBasico");
             serviceClient.Endpoint.EndpointBehaviors.Add(new CorrelationEndpointBehavior(configuration.ApiToken));
 
             return serviceClient;

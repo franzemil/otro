@@ -12,6 +12,7 @@ using Emtagas.Facturacion.Core.Exceptions;
 using Emtagas.Facturacion.Core.Services;
 using Emtagas.Facturacion.Core.ValueObjects;
 using Emtagas.Facturacion.INServices.Client;
+using Microsoft.Extensions.Logging;
 using SIN.Codigos;
 using SIN.FacturacionServiciosBasicos;
 using SIN.RecepcionCompras;
@@ -22,10 +23,12 @@ namespace Emtagas.Facturacion.INServices
     public class ImpuestosServices: IInpuestosNacionalesService
     {
         private readonly Configuration _configuration;
+        private readonly ILogger<ImpuestosServices> _logger;
 
-        public ImpuestosServices(Configuration configuration)
+        public ImpuestosServices(Configuration configuration, ILogger<ImpuestosServices> logger)
         {
             _configuration = configuration;
+            _logger = logger;
         }
         
         public async Task<string> SolicitarCodigoInicioSistema()
@@ -34,8 +37,8 @@ namespace Emtagas.Facturacion.INServices
             var response = await client.cuisAsync(new solicitudCuis
             {
                 nit = _configuration.Nit,
-                codigoAmbiente = Constants.AmbienteDesarrollo,
-                codigoModalidad = Constants.ModalidadComputarizada,
+                codigoAmbiente = _configuration.Ambiente,
+                codigoModalidad = _configuration.Modalidad,
                 codigoSistema = _configuration.CodigoSistema,
                 codigoSucursal = Constants.CasaMatriz,
                 codigoPuntoVentaSpecified = false
@@ -54,7 +57,7 @@ namespace Emtagas.Facturacion.INServices
             {
                 cuis = codigoUnicoInicioSistema,
                 nit = _configuration.Nit,
-                codigoAmbiente = Constants.AmbienteDesarrollo,
+                codigoAmbiente = _configuration.Ambiente,
                 codigoSistema = _configuration.CodigoSistema,
                 codigoSucursal = Constants.CasaMatriz,
                 codigoPuntoVentaSpecified = false
@@ -82,11 +85,6 @@ namespace Emtagas.Facturacion.INServices
         {
             var client = FacturacionServiceClientFactory.CreateServicioFacturacionClient(_configuration);
 
-
-            // for (var i = 1; i <= 28; i++)
-            // {
-            //     
-
             var response = await client.recepcionFacturaAsync(new solicitudRecepcionFactura()
             {
                 nit = _configuration.Nit,
@@ -94,9 +92,9 @@ namespace Emtagas.Facturacion.INServices
                 cufd = cufd,
                 cuis = cuis,
                 hashArchivo = hash,
-                codigoAmbiente = Constants.AmbienteDesarrollo,
+                codigoAmbiente = _configuration.Ambiente,
                 codigoEmision = 1,
-                codigoDocumentoSector = 13,// Constants.DocumentoSectorServicioBasico, // TODO: Codigo Documento Sector,
+                codigoDocumentoSector = Constants.DocumentoSectorServicioBasico,
                 codigoModalidad = Constants.ModalidadComputarizada,
                 codigoSistema = _configuration.CodigoSistema,
                 codigoSucursal = Constants.CasaMatriz,
@@ -131,6 +129,10 @@ namespace Emtagas.Facturacion.INServices
         {
             if (!parametricas.transaccion)
             {
+                foreach (var codigo in parametricas.listaCodigos)
+                {
+                    _logger.LogError($"Error loading the parameteres with code: {codigo.codigoClasificador} and Description: {codigo.descripcion}");
+                }
                 throw new INServiceException(parametricas.mensajesList.Select(m => $"Codigo: {(m.codigoSpecified ? m.codigo : string.Empty)} - Description: ${m.descripcion}"));
             }
             
@@ -151,7 +153,7 @@ namespace Emtagas.Facturacion.INServices
             {
                 cuis = codigoUnicoInicioSistema,
                 nit = _configuration.Nit,
-                codigoAmbiente = Constants.AmbienteDesarrollo,
+                codigoAmbiente = _configuration.Ambiente,
                 codigoModalidad = Constants.ModalidadComputarizada,
                 codigoSistema = _configuration.CodigoSistema,
                 codigoSucursal = Constants.CasaMatriz,

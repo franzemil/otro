@@ -14,6 +14,7 @@ namespace Emtagas.Facturation.Core.Tests.Utils
                 ApiToken = Environment.GetEnvironmentVariable("API_TOKEN"),
                 CodigoSistema = Environment.GetEnvironmentVariable("CODIGO_SISTEMA"),
                 IsDevelopment = true,
+                InpuestosServiceApi = Environment.GetEnvironmentVariable("IMPUESTOS_API"),
                 CodigoSucursal = "1",
                 ConnectionString = Environment.GetEnvironmentVariable("DB_URI")
             };

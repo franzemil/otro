@@ -11,8 +11,12 @@ namespace Emtagas.Facturacion.Core.Config
             {
                 Nit = Convert.ToInt32(configuration["NIT"]),
                 ApiToken = configuration["API_TOKEN"],
-                CodigoSucursal = "0",
-                CodigoSistema = configuration["CODIGO_SISTEMA"]
+                CodigoSucursal = configuration["SUCURSAL"],
+                CodigoSistema = configuration["CODIGO_SISTEMA"],
+                InpuestosServiceApi = configuration["IMPUESTOS_API"],
+                ConnectionString = configuration["DB_URI"],
+                IsDevelopment = configuration["ASPNETCORE_ENVIRONMENT"].Equals("Development"),
+                RazonSocial = configuration["RAZON_SOCIAL"]
             };
         }
     }

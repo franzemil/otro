@@ -38,6 +38,7 @@ namespace Emtagas.Facturacion.Core
         public async Task InicioSistema()
         {
             var cuis = string.Empty;
+            
             try
             {
                  cuis = _codigoFacturacionRepository.GetTodayCode(TipoCodigo.CUIS);
@@ -55,9 +56,9 @@ namespace Emtagas.Facturacion.Core
             }
             catch (CodigoNotFoundException e)
             {
-            var (cufd, cufdControl) = await _inServices.SolicitarCodigoUnicoFacturacionDiaria(cuis);
-            _codigoFacturacionRepository.Save(cufd, TipoCodigo.CUFD);
-            _codigoFacturacionRepository.Save(cufdControl, TipoCodigo.CUFD_CONTROL);
+                var (cufd, cufdControl) = await _inServices.SolicitarCodigoUnicoFacturacionDiaria(cuis);
+                _codigoFacturacionRepository.Save(cufd, TipoCodigo.CUFD);
+                _codigoFacturacionRepository.Save(cufdControl, TipoCodigo.CUFD_CONTROL);
             }
             
 
@@ -93,7 +94,7 @@ namespace Emtagas.Facturacion.Core
                     var cuf = new CodigoGenerator(_configuration).GetCuf(cufdControl, factura.FechaPago,
                         factura.NumeroFactura);
 
-                    var xmlSerializer = new FacturaXMLSerializer(_configuration, cufd);
+                    var xmlSerializer = new FacturaXmlSerializer(_configuration, cufd);
                     var xmlValidator = new FacturaXmlValidator();
 
                     var xml = xmlSerializer.Serialize(factura, cuf);

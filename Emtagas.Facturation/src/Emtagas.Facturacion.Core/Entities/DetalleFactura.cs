@@ -6,6 +6,6 @@ namespace Emtagas.Facturacion.Core.Entities
 
         public string Description { get; set; }
 
-        public decimal SubTotal { get; set; }
+        public int SubTotal { get; set; }
     }
 }
