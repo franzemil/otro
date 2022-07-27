@@ -5,6 +5,7 @@ using Emtagas.Facturacion.INServices;
 using Emtagas.Facturation.Core.Tests.Fixtures;
 using Emtagas.Facturation.Repository.Repositories;
 using Emtagas.Facturation.SQLServerRepository.Repositories;
+using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
 namespace Emtagas.Facturation.Core.Tests
@@ -28,10 +29,10 @@ namespace Emtagas.Facturation.Core.Tests
             var application = new FacturacionFacade(
                 config,
                 new FacturaRepository(_dbContextFixture.DbContext),
-                new DeclaracionFacturaRepository(),
+                new DeclaracionFacturaRepository(_dbContextFixture.DbContext),
                 new CodigoFacturacionRepository(_dbContextFixture.DbContext),
                 new ParametroRepository(_dbContextFixture.DbContext),
-                new ImpuestosServices(config)
+                new ImpuestosServices(config, new NullLogger<ImpuestosServices>())
             );
 
             await application.InicioSistema();

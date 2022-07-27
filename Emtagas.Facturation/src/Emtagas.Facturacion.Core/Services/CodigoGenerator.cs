@@ -22,7 +22,7 @@ namespace Emtagas.Facturacion.Core.Services
             var cuf = _configuration.Nit.ToString("D13");
             cuf += fecha.ToString("yyyyMMddHHmmssfff");
             cuf += Constants.CasaMatriz.ToString("D4");
-            cuf += Constants.ModalidadComputarizada.ToString();
+            cuf += _configuration.Modalidad.ToString();
             cuf += Constants.TipoEmisionOnline.ToString();
             cuf += Constants.FacturaConDerechoACreditoFiscal.ToString();
             cuf += Constants.DocumentoSectorServicioBasico.ToString("D2");

@@ -15,7 +15,8 @@ namespace Emtagas.Facturacion.Core.Validator
         {
             var path = Path.GetDirectoryName(Assembly.GetAssembly(typeof(FacturaXmlValidator)).Location);
             var schema = new XmlSchemaSet();
-            schema.Add("", Path.Join(path, "Utils", "facturaComputarizadaServicioBasico.xsd"));
+            schema.Add("http://www.w3.org/2000/09/xmldsig#", Path.Join(path, "Utils", "SignatureSchema.xsd"));
+            schema.Add("", Path.Join(path, "Utils", "facturaElectronicaServicioBasico.xsd"));
 
             var doc = new XmlDocument();
             

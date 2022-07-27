@@ -112,23 +112,23 @@ namespace Emtagas.Facturacion.Core.Utils
         [XmlElement(ElementName = "ajusteNoSujetoIva", IsNullable = true)]
         public int? AjusteNoSujetoIva { get; set; }
 
-        [XmlElement(ElementName = "detalleAjusteNoSujetoIva", IsNullable = true)]
-        public string? DetalleAjusteNoSujetoIva { get; set; }
+        // [XmlElement(ElementName = "detalleAjusteNoSujetoIva", IsNullable = true)]
+        // public string? DetalleAjusteNoSujetoIva { get; set; }
 
-        [XmlElement(ElementName = "ajusteSujetoIva", IsNullable = true)]
-        public int? AjusteSujetoIva { get; set; }
+        // [XmlElement(ElementName = "ajusteSujetoIva", IsNullable = true)]
+        // public int? AjusteSujetoIva { get; set; }
 
-        [XmlElement(ElementName = "detalleAjusteSujetoIva", IsNullable = true)]
-        public string? DetalleAjusteSujetoIva { get; set; }
+        // [XmlElement(ElementName = "detalleAjusteSujetoIva", IsNullable = true)]
+        // public string? DetalleAjusteSujetoIva { get; set; }
 
         [XmlElement(ElementName = "otrosPagosNoSujetoIva", IsNullable = true)]
         public int? OtrosPagosNoSujetoIva { get; set; }
 
-        [XmlElement(ElementName = "detalleOtrosPagosNoSujetoIva", IsNullable = true)]
-        public string? DetalleOtrosPagosNoSujetoIva { get; set; }
+        // [XmlElement(ElementName = "detalleOtrosPagosNoSujetoIva", IsNullable = true)]
+        // public string? DetalleOtrosPagosNoSujetoIva { get; set; }
 
-        [XmlElement(ElementName = "otrasTasas", IsNullable = true)]
-        public double? OtrasTasas { get; set; }
+        // [XmlElement(ElementName = "otrasTasas", IsNullable = true)]
+        // public double? OtrasTasas { get; set; }
 
         [XmlElement(ElementName = "codigoMoneda")]
         public int CodigoMoneda { get; set; }
@@ -139,14 +139,14 @@ namespace Emtagas.Facturacion.Core.Utils
         [XmlElement(ElementName = "montoTotalMoneda")]
         public double MontoTotalMoneda { get; set; }
 
-        [XmlElement(ElementName = "descuentoAdicional", IsNullable = true)]
-        public double? DescuentoAdicional { get; set; }
+        // [XmlElement(ElementName = "descuentoAdicional", IsNullable = true)]
+        // public double? DescuentoAdicional { get; set; }
 
-        [XmlElement(ElementName = "codigoExcepcion")]
-        public int? CodigoExcepcion { get; set; }
+        // [XmlElement(ElementName = "codigoExcepcion")]
+        // public int? CodigoExcepcion { get; set; }
 
-        [XmlElement(ElementName = "cafc", IsNullable = true)] 
-        public string? Cafc { get; set; }
+        // [XmlElement(ElementName = "cafc", IsNullable = true)] 
+        // public string? Cafc { get; set; }
 
         [XmlElement(ElementName = "leyenda")]
         public string Leyenda { get; set; }
@@ -189,8 +189,8 @@ namespace Emtagas.Facturacion.Core.Utils
         public int SubTotal { get; set; }
     }
 
-    [XmlRoot(ElementName = "facturaComputarizadaServicioBasico")]
-    public class FacturaComputarizadaServicioBasico
+    [XmlRoot(ElementName = "facturaElectronicaServicioBasico")]
+    public class FacturaElectronicaServicioBasico
     {
         [XmlElement(ElementName = "cabecera")] 
         public Cabecera Cabecera { get; set; }

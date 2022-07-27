@@ -16,7 +16,7 @@ namespace Emtagas.Facturacion.Core.Config
 
         public int Ambiente => IsDevelopment ? Constants.AmbienteDesarrollo : Constants.AmbienteProduccion;
 
-        public int Modalidad => Constants.ModalidadComputarizada;
+        public int Modalidad => Constants.ModalidadElectronica;
 
         public int Nit { get; set; }
 
@@ -25,5 +25,9 @@ namespace Emtagas.Facturacion.Core.Config
         public string ApiToken { get; init; }
 
         public bool IsDevelopment { get; init; }
+
+        public string CertificatePath { get; set; } = "/home/franzemil/Projects/tarija/certificate/signing.crt";
+
+        public string PrivateKeyPath { get; set; } = "/home/franzemil/Projects/tarija/certificate/signing.key";
     }
 }

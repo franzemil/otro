@@ -20,6 +20,8 @@ namespace Emtagas.Facturacion.Core.Entities
 
         public DateTime FechaDeclaracion { get; set; }
 
-        public List<DeclaracionResponse> Detalle { get; set; }
+        public bool Success { get; set; }
+        
+        public IEnumerable<DeclaracionResponse> Detalle { get; set; }
     }
 }

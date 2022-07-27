@@ -26,9 +26,18 @@
 
   <ItemGroup>
     <None Remove="Utils\facturaComputarizadaServicioBasico.xsd" />
-    <EmbeddedResource Include="Utils\facturaComputarizadaServicioBasico.xsd">
+    <None Remove="Utils\facturaElectronicaServicioBasico.xsd" />
+    <EmbeddedResource Include="Utils\facturaElectronicaServicioBasico.xsd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Remove="Utils\SignatureSchema.xsd" />
+    <EmbeddedResource Include="Utils\SignatureSchema.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

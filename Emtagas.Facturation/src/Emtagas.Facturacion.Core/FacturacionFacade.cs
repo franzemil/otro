@@ -60,11 +60,9 @@ namespace Emtagas.Facturacion.Core
                 _codigoFacturacionRepository.Save(cufd, TipoCodigo.CUFD);
                 _codigoFacturacionRepository.Save(cufdControl, TipoCodigo.CUFD_CONTROL);
             }
-            
 
             // var codigos = await _inServices.SincronizarParametros(cuis);
             // _parametroRepository.SaveParametros(codigos);
-
         }
 
         public string GetTodayCodigo(TipoCodigo tipoCodigo)
@@ -96,17 +94,26 @@ namespace Emtagas.Facturacion.Core
 
                     var xmlSerializer = new FacturaXmlSerializer(_configuration, cufd);
                     var xmlValidator = new FacturaXmlValidator();
+                    var xmlSigner = new DigitalSignature();
 
                     var xml = xmlSerializer.Serialize(factura, cuf);
+                    var signedXml = xmlSigner.Sign(xml, _configuration.CertificatePath, _configuration.PrivateKeyPath);
 
-                    xmlValidator.IsValid(xml);
+                    xmlValidator.IsValid(signedXml);
 
                     var facturaCompresa = Utils.Utils.Comprimir(Encoding.UTF8.GetBytes(xml));
                     
                     var hash = Utils.Utils.ComputeHash256(facturaCompresa);
 
-                    await _inServices.RecepcionarFactura(facturaCompresa, cuis, cufd, hash);
+                    var declaracionFactura = await _inServices.RecepcionarFactura(facturaCompresa, cuis, cufd, hash);
 
+                    declaracionFactura.FacturaId = facturaId;
+                    declaracionFactura.File = facturaCompresa;
+                    declaracionFactura.Hash = hash;
+                    declaracionFactura.CUF = cuf;
+                    declaracionFactura.CUFD = cufd;
+                    
+                    _declaracionFacturaRepository.SaveDeclaracionFactura(declaracionFactura);
                 }
                 catch (CodigoNotFoundException)
                 {
@@ -117,13 +124,6 @@ namespace Emtagas.Facturacion.Core
                 {
                     throw;
                 }
-
-                var declaracionFactura = new DeclaracionFactura()
-                {
-                    Id = Guid.NewGuid(),
-                    CUF = cufd,
-                    FacturaId = facturaId
-                };
             }
         }
 

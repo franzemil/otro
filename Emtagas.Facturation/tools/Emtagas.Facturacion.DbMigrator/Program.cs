@@ -31,7 +31,7 @@ namespace Emtagas.Facturacion.DbMigrator
                 .AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb
                     .AddSqlServer()
-                    //.WithGlobalConnectionString(dbUri)
+                    .WithGlobalConnectionString(dbUri)
                     .ScanIn(Assembly.GetExecutingAssembly()).For.Migrations())
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 .BuildServiceProvider(false);
@@ -40,6 +40,7 @@ namespace Emtagas.Facturacion.DbMigrator
         private static void UpdateDatabase(IServiceProvider serviceProvider)
         {
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
+            runner.MigrateDown(0);
             runner.MigrateUp();
         }
     }

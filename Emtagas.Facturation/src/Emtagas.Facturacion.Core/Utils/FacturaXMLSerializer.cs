@@ -21,7 +21,7 @@ namespace Emtagas.Facturacion.Core.Utils
         
         public string Serialize(Factura factura, string cuf)
         {
-            var serializer = new XmlSerializer(typeof(FacturaComputarizadaServicioBasico));
+            var serializer = new XmlSerializer(typeof(FacturaElectronicaServicioBasico));
 
             var memoryStream = new MemoryStream();
 
@@ -30,7 +30,7 @@ namespace Emtagas.Facturacion.Core.Utils
             return Encoding.UTF8.GetString(memoryStream.ToArray());
         }
 
-        private FacturaComputarizadaServicioBasico Format(Factura factura, string cuf)
+        private FacturaElectronicaServicioBasico Format(Factura factura, string cuf)
         {
             var cabecera = new Cabecera
             {
@@ -65,15 +65,15 @@ namespace Emtagas.Facturacion.Core.Utils
                 CodigoProductoSin = 9900,
                 ActividadEconomica = 352020,
                 Cantidad = 1,
-                Descripcion = factura.Detalle.Description,
+                Descripcion = "Deatlle",//factura.Detalle.Description,
                 CodigoProducto = 2,
                 UnidadMedida = Constants.MetrosCubicos68FBol,
                 PrecioUnitario = 100,
                 MontoDescuento = 0,
-                SubTotal = factura.Detalle.SubTotal
+                SubTotal = 12
             };
             
-            return new FacturaComputarizadaServicioBasico()
+            return new FacturaElectronicaServicioBasico()
             {
                 Cabecera = cabecera,
                 Detalle = detalle

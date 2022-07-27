@@ -95,26 +95,29 @@ namespace Emtagas.Facturacion.INServices
                 codigoAmbiente = _configuration.Ambiente,
                 codigoEmision = 1,
                 codigoDocumentoSector = Constants.DocumentoSectorServicioBasico,
-                codigoModalidad = Constants.ModalidadComputarizada,
+                codigoModalidad = _configuration.Modalidad,
                 codigoSistema = _configuration.CodigoSistema,
                 codigoSucursal = Constants.CasaMatriz,
                 fechaEnvio = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fff"),
                 tipoFacturaDocumento = 1,
-                codigoPuntoVentaSpecified = false
+                codigoPuntoVentaSpecified = false,
             });
 
-            // if (!response.RespuestaServicioFacturacion.transaccion)
-            // {
-            //     
-            // }
-            //
-            // if (response.RespuestaServicioFacturacion.codigoDescripcion != "RECHAZADO" && response.RespuestaServicioFacturacion.mensajesList.First().codigo != 995)
-            // {
-            //     Console.WriteLine("g");
-            // }
-            // }
+            if (!response.RespuestaServicioFacturacion.transaccion)
+            {
+                
+            }
 
-            return new DeclaracionFactura();
+            return new DeclaracionFactura()
+            {
+                File = factura,
+                Success = response.RespuestaServicioFacturacion.transaccion,
+                FechaDeclaracion = DateTime.Now,
+                Detalle = response.RespuestaServicioFacturacion.mensajesList.Select((message) => new DeclaracionResponse()
+                {
+                    Response = message.descripcion
+                })
+            };
         }
 
         private IEnumerable<Parametro> FormatParametros(respuestaListaProductos codigoProductoRespuestaListaProductos, TipoParametro codigoProducto)
@@ -154,7 +157,7 @@ namespace Emtagas.Facturacion.INServices
                 cuis = codigoUnicoInicioSistema,
                 nit = _configuration.Nit,
                 codigoAmbiente = _configuration.Ambiente,
-                codigoModalidad = Constants.ModalidadComputarizada,
+                codigoModalidad = _configuration.Modalidad,
                 codigoSistema = _configuration.CodigoSistema,
                 codigoSucursal = Constants.CasaMatriz,
                 codigoPuntoVentaSpecified = false

@@ -13,9 +13,9 @@ namespace Emtagas.Facturacion.DbMigrator.Scripts
                 .WithColumn("CUF").AsString(150)
                 .WithColumn("File").AsBinary()
                 .WithColumn("Hash").AsString()
-                .WithColumn("Detalle").AsString()
-                .WithColumn("Enviada").AsBoolean().WithDefaultValue(false)
-                .WithColumn("FechaDeclaracion").AsInt32();
+                .WithColumn("FechaDeclaracion").AsDateTime2()
+                .WithColumn("Success").AsBoolean().WithDefaultValue(false)
+                .WithColumn("Detalle").AsString();
         }
 
         public override void Down()

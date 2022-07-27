@@ -18,8 +18,7 @@ namespace Emtagas.Facturacion.Common
         public const string Municipio = "TARIJA";
         public const string Direccion = "AVENIDA GRAN CHACO NRO. S/N ZONA/BARRIO: ANICETO ARCE";
         public const int MetodoPagoBolivianos = 1;
-        public const int MetrosCubicos68FBol = 89;
+        public const int MetrosCubicos68FBol = 69;
         public const string Leyenda = "Ley N° 453: El proveedor debe brindar atención sin discriminación, con respeto, calidez y cordialidad a los usuarios y consumidores.";
-
     }
 }

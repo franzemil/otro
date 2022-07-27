@@ -25,7 +25,7 @@ namespace Emtagas.Facturation.Core.Tests.Services
             {
                 nit = nit,
                 codigoAmbiente = Constants.AmbienteDesarrollo,
-                codigoModalidad = Constants.ModalidadComputarizada,
+                codigoModalidad = Constants.ModalidadElectronica,
                 codigoSucursal = 1,
                 codigoSistema = "720F39EA484333389B5F90E",
                 codigoPuntoVentaSpecified = false

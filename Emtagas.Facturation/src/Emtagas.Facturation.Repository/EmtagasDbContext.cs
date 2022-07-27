@@ -11,6 +11,9 @@ namespace Emtagas.Facturation.Repository
 
         public DbSet<CodigoFacturacionModel> CodigosFacturacion { get; set; }
         
+        
+        public DbSet<DeclaracionFacturaModel> FacturasDeclaradas { get; set; }
+
         public DbSet<ParametroModel> Parametros { get; set; }
 
         public EmtagasDbContext(DbContextOptions options) : base(options)
