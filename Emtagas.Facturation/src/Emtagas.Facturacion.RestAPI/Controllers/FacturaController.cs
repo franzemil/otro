@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Emtagas.Facturacion.Core;
 using Emtagas.Facturacion.Core.Entities;
 using Emtagas.Facturacion.Core.Repositories;
 using Emtagas.Facturacion.RestAPI.Dto;
+using Emtagas.Facturation.Repository.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Emtagas.Facturacion.RestAPI.Controllers
@@ -13,10 +16,12 @@ namespace Emtagas.Facturacion.RestAPI.Controllers
     [Route("facturas")]
     public class FacturaController : ControllerBase
     {
+        private readonly FacturacionFacade _application;
         private readonly IFacturaRepository _facturaRepository;
 
-        public FacturaController(IFacturaRepository facturaRepository)
+        public FacturaController(FacturacionFacade application, IFacturaRepository facturaRepository)
         {
+            _application = application;
             _facturaRepository = facturaRepository;
         }
 
@@ -31,19 +36,34 @@ namespace Emtagas.Facturacion.RestAPI.Controllers
                 StartDate = @params.StartDate,
                 EndDate = @params.EndDate,
             };
-            return _facturaRepository.GetFacturaFilteredAndPaged(filters, new Pagination() { PageSize = 10, Offset = 0}).Select(f => f).ToList();
+            return _facturaRepository.GetFacturaFilteredAndPaged(filters, new Pagination() {PageSize = 10, Offset = 0})
+                .Select(f => f).ToList();
         }
 
         [HttpGet]
         [Route(":id")]
-        public ActionResult<Factura> GetSingleFactura([FromRoute(Name = "id")] Guid facturaId)
+        public async Task<ActionResult> GetSingleFactura([FromRoute(Name = "id")] int facturaId)
         {
-            return default;
+            try
+            {
+                var cuis = _application.GetTodayCodigo(TipoCodigo.CUIS);
+                await  _application.DeclararFactura(cuis, facturaId);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
         }
 
         [HttpPost]
         [Route(":id/declarar")]
         public IActionResult DeclararFactura()
+        {
+            return default;
+        }
+
+        public IActionResult RedeclararFactura()
         {
             return default;
         }

@@ -13,8 +13,8 @@ namespace Emtagas.Facturation.SQLServerRepository.Repositories
         {
             _dbContext = dbContext;
         }
-        
-        public DeclaracionFactura GetDeclaracionFacturaByFacturaIdAndCUF(int facturaId, string cuf)
+
+        public DeclaracionFactura GetDeclaracionFacturaByFacturaId(int facturaId)
         {
             throw new System.NotImplementedException();
         }
@@ -23,6 +23,12 @@ namespace Emtagas.Facturation.SQLServerRepository.Repositories
         {
             var model = DeclaracionFacturaModel.FromModel(declaracionFactura);
             _dbContext.Add(model);
+            _dbContext.SaveChanges();
+        }
+
+        public void ActualizarDeclaracion(DeclaracionFactura declaracionFactura)
+        {
+            _dbContext.Update(declaracionFactura);
             _dbContext.SaveChanges();
         }
     }

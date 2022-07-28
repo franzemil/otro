@@ -4,8 +4,10 @@ namespace Emtagas.Facturacion.Core.Repositories
 {
     public interface IDeclaracionFacturaRepository
     { 
-        DeclaracionFactura GetDeclaracionFacturaByFacturaIdAndCUF(int facturaId, string cuf);
+        DeclaracionFactura GetDeclaracionFacturaByFacturaId(int facturaId);
 
         void SaveDeclaracionFactura(DeclaracionFactura declaracionFactura);
+        
+        void ActualizarDeclaracion(DeclaracionFactura declaracionFactura);
     }
 }

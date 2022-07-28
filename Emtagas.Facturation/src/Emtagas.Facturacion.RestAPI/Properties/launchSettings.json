@@ -25,12 +25,11 @@
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "API_TOKEN": "",
-        "SUCURSAL": ",",
-        "CODIGO_SISTEMA": "",
-        "IMPUESTOS_API": "",
-        "DB_URI": "",
-        "RAZON_SOCIAL": ""
+        "API_TOKEN": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFTVRBR0FTMjAxMCIsImNvZGlnb1Npc3RlbWEiOiI3MjE5RDM2NUVGQUQwREY2OEYwQjkwRiIsIm5pdCI6Ikg0c0lBQUFBQUFBQUFETTBNREl4TURNMk1ESUFBR29JQ2ZZS0FBQUEiLCJpZCI6MTYzNjYsImV4cCI6MTY2MTk5MDQwMCwiaWF0IjoxNjU2ODk1MDcxLCJuaXREZWxlZ2FkbyI6MTAyNDA2MzAyMCwic3Vic2lzdGVtYSI6IlNGRSJ9.2NeU1jAyxwrlryMClvs7RZpMrA9ZD8s7GUgj03MRkE7JGEl_Zifutcr0UURAoA_MZeakWFa5k6smxrU_yHUHcQ",
+        "CODIGO_SISTEMA": "7219D365EFAD0DF68F0B90F",
+        "IMPUESTOS_API": "https://pilotosiatservicios.impuestos.gob.bo/v2",
+        "NIT": "1024063020",
+        "DB_URI": "Server=localhost;Database=bdtarija;User Id=sa;Password=@sistemas123",
       }
     }
   }

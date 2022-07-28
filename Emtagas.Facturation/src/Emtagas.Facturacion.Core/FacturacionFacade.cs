@@ -1,4 +1,3 @@
-using System;
 using System.Text;
 using System.Threading.Tasks;
 using Emtagas.Facturacion.Core.Config;
@@ -51,7 +50,6 @@ namespace Emtagas.Facturacion.Core
 
             try
             {
-
                 _codigoFacturacionRepository.GetTodayCode(TipoCodigo.CUFD);
             }
             catch (CodigoNotFoundException e)
@@ -61,8 +59,9 @@ namespace Emtagas.Facturacion.Core
                 _codigoFacturacionRepository.Save(cufdControl, TipoCodigo.CUFD_CONTROL);
             }
 
-            // var codigos = await _inServices.SincronizarParametros(cuis);
-            // _parametroRepository.SaveParametros(codigos);
+            var parametros = await _inServices.SincronizarParametros(cuis);
+            _parametroRepository.SaveParametros(parametros);
+
         }
 
         public string GetTodayCodigo(TipoCodigo tipoCodigo)
@@ -75,7 +74,45 @@ namespace Emtagas.Facturacion.Core
             return _facturaRepository.GetFactura(facturaId);
         }
 
-        public async Task DeclararFacturas(string cuis, params int[] facturas)
+        public async Task RedeclararFactura(int facturaId)
+        {
+            var declaracion = _declaracionFacturaRepository.GetDeclaracionFacturaByFacturaId(facturaId);
+
+            if (declaracion == null)
+            {
+                throw new FacturacionException($"La Factura ({facturaId}) aun no ha sido declarada, trate de declarar Antes");
+            }
+
+            var cuis = _codigoFacturacionRepository.GetTodayCode(TipoCodigo.CUIS);
+            
+            var nuevaDeclaracion = await _inServices.RecepcionarFactura(declaracion.File, cuis,declaracion.CUFD, declaracion.Hash);
+
+            declaracion.Detalle = nuevaDeclaracion.Detalle;
+            declaracion.FechaDeclaracion = nuevaDeclaracion.FechaDeclaracion;
+            declaracion.Success = nuevaDeclaracion.Success;
+   
+            _declaracionFacturaRepository.ActualizarDeclaracion(declaracion);
+        }
+
+        public async Task DeclararFactura(string cuis, int facturaId, int numTries = 0)
+        {
+            try
+            {
+                 await DeclararFacturas(cuis, facturaId);
+            }
+            catch (CodigoNotFoundException e)
+            {
+                if (numTries > 0)
+                {
+                    throw;
+                }
+                
+                await InicioSistema();
+                await DeclararFacturas(cuis, facturaId, 1);
+            }
+        }
+
+        private async Task DeclararFacturas(string cuis, params int[] facturas)
         {
             foreach (var facturaId in facturas)
             {
@@ -117,8 +154,6 @@ namespace Emtagas.Facturacion.Core
                 }
                 catch (CodigoNotFoundException)
                 {
-                    // TODO: Generate cuf
-                    throw;
                 }
                 catch (InvalidXMLException)
                 {

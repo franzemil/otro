@@ -19,6 +19,8 @@ namespace Emtagas.Facturacion.Core.Entities
         public DateTime FechaPago { get; set; }
         
         public DateTime? FechaDeclaracion { get; set; }
+        
+        public bool Declarado { get; set; }
 
         public int IdCliente { get; set; }
 

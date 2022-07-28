@@ -1,3 +1,4 @@
+using Emtagas.Facturacion.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,8 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Emtagas.Facturacion.Core.Config;
 using Emtagas.Facturacion.Core.Repositories;
+using Emtagas.Facturacion.Core.Services;
+using Emtagas.Facturacion.INServices;
 using Emtagas.Facturation.Repository;
 using Emtagas.Facturation.Repository.Repositories;
+using Emtagas.Facturation.SQLServerRepository.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Emtagas.Facturacion.RestAPI
@@ -24,14 +28,16 @@ namespace Emtagas.Facturacion.RestAPI
         public void ConfigureServices(IServiceCollection services)
         {
             var configuration = Configuration.GetEmtagasConfiguration();
-            var dbUri = Configuration.GetValue<string>("DB_URI");
-            services.AddDbContext<EmtagasDbContext>(options => options.UseSqlServer(dbUri));
-            services.AddScoped<IFacturaRepository>(sp =>
-            {
-                var dbContext = sp.GetService<EmtagasDbContext>();
-                var repository = new FacturaRepository(dbContext);
-                return repository;
-            });
+            services.AddSingleton(configuration);
+            services.AddDbContext<EmtagasDbContext>(options => options.UseSqlServer(configuration.ConnectionString));
+            services.AddScoped<IFacturaRepository, FacturaRepository>();
+            services.AddScoped<IDeclaracionFacturaRepository, DeclaracionFacturaRepository>();
+            services.AddScoped<ICodigoFacturacionRepository, CodigoFacturacionRepository>();
+            services.AddScoped<IInpuestosNacionalesService, ImpuestosServices>();
+            services.AddScoped<IParametroRepository, ParametroRepository>();
+            services.AddScoped<FacturacionFacade>();
+
+            services.AddMvcCore();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,8 +50,6 @@ namespace Emtagas.Facturacion.RestAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
-           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

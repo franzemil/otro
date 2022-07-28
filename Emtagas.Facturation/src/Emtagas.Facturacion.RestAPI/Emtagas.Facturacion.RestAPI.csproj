@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Emtagas.Facturacion.INServices\Emtagas.Facturacion.INServices.csproj" />
     <ProjectReference Include="..\Emtagas.Facturation.Repository\Emtagas.Facturacion.SQLServerRepository.csproj" />
   </ItemGroup>
 

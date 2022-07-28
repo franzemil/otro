@@ -22,6 +22,8 @@ namespace Emtagas.Facturation.Repository.Models
         public DateTime FechaPago { get; set; }
         
         public DateTime? FechaDeclaracion { get; set; }
+        
+        public bool? Declarado { get; set; }
 
         public int IdCliente { get; set; }
 
@@ -38,9 +40,14 @@ namespace Emtagas.Facturation.Repository.Models
                 TotalFactura = TotalFactura,
                 Mes = Mes,
                 FechaPago = FechaPago,
+                Declarado = Declarado ?? false,
                 FechaDeclaracion = FechaDeclaracion,
                 IdCliente = IdCliente,
-                CodigoMedidor = CodigoMedidor
+                CodigoMedidor = CodigoMedidor,
+                Detalle = new DetalleFactura()
+                {
+                    SubTotal = TotalFactura,
+                }
             };
         }
     }
